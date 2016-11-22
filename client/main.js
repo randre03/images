@@ -31,7 +31,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ImageList/>
+                {/*this.state.images will alwys return an array because that is how we defined it above*/}
+                <ImageList images={this.state.images}/>
             </div>
         );
     }

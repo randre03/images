@@ -12,6 +12,7 @@
 // so we call {props.image.title} and {props.image.link}
 
 import React from 'react';
+import ImageScore from './image_score';
 
 const ImageDetail = (props) => {
     // props.image is the 'image' object
@@ -25,6 +26,7 @@ const ImageDetail = (props) => {
                 <h4 className="media-heading">
                     {props.image.title}
                 </h4>
+                <p>{props.image.description}</p>
             </div>
         </li>
     );

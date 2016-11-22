@@ -8,18 +8,13 @@
 import React from 'react';
 import ImageDetail from './image_detail';
 
-const IMAGES = [
-    {title: 'Pen',       link: 'https://dummyimage.com/600x400'},
-    {title: 'Pine Tree', link: 'https://dummyimage.com/600x400'},
-    {title: 'Mug',       link: 'https://dummyimage.com/600x400'},
-];
-
 // Create Component
-const ImageList = () => {
+const ImageList = (props) => {
     {/* for each image in IMAGES, return <ImageDetail/>*/}
     {/* passing props 'image={image}' from ImageList to <ImageDetail/>*/}
     {/* see additional notes in <ImageDetail/>*/}
-    const RenderedImages = IMAGES.map(function(image) {
+    const validImages = props.images.filter(image => !image.is_album);
+    const RenderedImages = validImages.map(function(image) {
         return <ImageDetail key={image.title} image={image}/>
     });
 
